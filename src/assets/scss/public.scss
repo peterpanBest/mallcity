@@ -1,0 +1,29 @@
+@mixin iconSpan1 () {
+    width: 20%;
+    height: auto;
+    overflow: hidden;
+    float: left;
+}
+
+@mixin iconSpan2 () {
+    width: 25%;
+    height: auto;
+    overflow: hidden;
+    float: left;
+}
+
+@mixin fontSpan () {
+    display: block;
+    width: 33.3%;
+    height: .3rem;
+    line-height: .3rem;
+    float: left;
+    font-size: .14rem;
+    color: rgb(146, 141, 141);
+}
+
+$primaryColor: #fe4070;
+
+$primaryFontSize15: .15rem;
+
+$primaryFontSize16: .16rem;
