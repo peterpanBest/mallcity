@@ -13,6 +13,9 @@ export default {
     },
     showTabCondition({commit},value){
         commit(types.TABBAR_CONDITION,value)
+    },
+    bgdivCondition({commit},value){
+        commit(types.BGDIV_CONDITION,value)
     }
 }
 

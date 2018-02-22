@@ -1,5 +1,6 @@
 <template>
     <div class="hauto">
+        <section class="bgdiv" v-show="selectCon"></section>
         <swiper height="3.5rem" dots-position="center">
             <swiper-item class="swiper-demo-img" v-for="(item, index) in swiperList" :key="index"><img :src="item"></swiper-item>
         </swiper>
@@ -23,7 +24,7 @@
         <line-height :type="2" />
         <line-height :type="3" />
         <line-height :type="4" />
-        <section class="select-div w95">
+        <section class="select-div w95" @click="selectBtn">
             <span class="select-title">{{selectTitle}}</span>
             <div class="pre-div">
                 <span class="select-pre"><img :src="preImg" alt=""></span>
@@ -33,7 +34,7 @@
         <line-height :type="6" />
         <line-height :type="7" />
         <line-height :type="8" />
-        <select-com />
+        <select-com :selectData="selectData" />
     </div>
 </template>
 
@@ -62,7 +63,8 @@
                 express: "0.00",
                 saleNum:"0",
                 maker: "北京",
-                selectTitle: "请选择分类"
+                selectTitle: "请选择分类",
+                selectData: {}
             }
         },
         mounted() {
@@ -82,6 +84,7 @@
                     let _arr = ""
                     _temp = res.data.success.goodslist
                     _arr = this.findPara(_para,_temp)
+                    this.selectData = _arr
                     this.goodTitle = _arr.longTitle
                     this.nowPrice = _arr.nowPrice
                      console.log(_arr)
@@ -124,6 +127,14 @@
                         }  
                     }
                 }
+            },
+            selectBtn: function() {
+                this.$store.dispatch("bgdivCondition",true)
+            }
+        },
+        computed: {
+            selectCon() {
+                return this.$store.state.bgdivCondition
             }
         }
     }
@@ -131,6 +142,14 @@
 
 <style lang="scss" scoped>
     @import "../../assets/scss/public.scss";
+    .bgdiv{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(51, 50, 50, 0.7);
+        top: 0;
+        z-index: 999;
+    }
 
     .swiper-demo-img img{
         width: 100%;
@@ -215,4 +234,5 @@
          width: .08rem;
          height: .15rem;
      }
+   
 </style>

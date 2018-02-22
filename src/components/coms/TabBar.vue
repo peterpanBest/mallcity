@@ -8,11 +8,11 @@
         <img slot="icon" src="../../assets/image/icon/my.png">
         <span slot="label" style="font-size: .13rem;" :class="{active:tab == 'myaccount'}">我的</span>
       </tabbar-item>
-      <tabbar-item style="margin-top:.05rem;" link="/cart"  @click.native="tabChange('cart')" :class="{active:tab == 'cart'}">
+      <tabbar-item badge="count" style="margin-top:.05rem;" link="/cart"  @click.native="tabChange('cart')" :class="{active:tab == 'cart'}">
         <img slot="icon" src="../../assets/image/icon/cart.png">
         <span slot="label" style="font-size: .13rem;" :class="{active:tab == 'cart'}">购物车</span>
       </tabbar-item>
-      <tabbar-item badge="2" style="margin-top:.05rem;" link="/order" @click.native="tabChange('order')" :class="{active:tab == 'order'}">
+      <tabbar-item badge="4" style="margin-top:.05rem;" link="/order" @click.native="tabChange('order')" :class="{active:tab == 'order'}">
         <img slot="icon" src="../../assets/image/icon/order.png">
         <span slot="label" style="font-size: .13rem;" :class="{active:tab == 'order'}">订单</span>
       </tabbar-item>
@@ -25,7 +25,7 @@
         name: "tabBar",
         data(){
             return {
-                
+                count: 0
             }
         },
         components: {
@@ -36,14 +36,22 @@
             Icon
         },
         mounted() {
-           if(this.$store.state.tabBarCon == ""){
+           let _con = this.$store.state.tabBarCon
+           this.$store.dispatch("tabBarChange",_con)
+
+           if(_con == ""){
                this.$store.dispatch("tabBarChange","index")
            }
+
+           this.count = this.$store.state.cart.cart.length
         },
         computed: {
             tab(){
                 return this.$store.state.tabBarCon
             }
+        },
+        watch: {
+           
         },
         methods:{
             tabChange: function(value){
