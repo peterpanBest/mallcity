@@ -72,7 +72,7 @@
             }
         },
         methods: {
-            ...mapActions(['addCart']),
+            ...mapActions(['addCart','bgdivCondition']),
             change (val) {
                 this.goodCount = val;
             },
@@ -81,6 +81,15 @@
                 this.closeCondition = true
             },
             addToCart: function(){
+               this.bgdivCondition(false)
+               this.$vux.toast.show({
+                    text: "添加购物成功",
+                    type: "text",
+                    width: "50%",
+                    position: "bottom",
+                    time: 1200
+                })
+                
                let selectedObj = {
                     id: "",
                     price: "",
@@ -94,7 +103,7 @@
                 selectedObj.title = this.selectData.longTitle
                 selectedObj.img = this.selectData.img
                 selectedObj.count = this.goodCount
-                console.log("data",JSON.stringify(selectedObj))
+                //console.log("data",JSON.stringify(selectedObj))
                 this.addCart(selectedObj)
                 //console.log(this.$store.state.cart.cart.length)
             }

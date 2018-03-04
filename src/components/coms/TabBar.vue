@@ -8,11 +8,11 @@
         <img slot="icon" src="../../assets/image/icon/my.png">
         <span slot="label" style="font-size: .13rem;" :class="{active:tab == 'myaccount'}">我的</span>
       </tabbar-item>
-      <tabbar-item badge="count" style="margin-top:.05rem;" link="/cart"  @click.native="tabChange('cart')" :class="{active:tab == 'cart'}">
+      <tabbar-item badge="" style="margin-top:.05rem;" link="/cart"  @click.native="tabChange('cart')" :class="{active:tab == 'cart'}">
         <img slot="icon" src="../../assets/image/icon/cart.png">
         <span slot="label" style="font-size: .13rem;" :class="{active:tab == 'cart'}">购物车</span>
       </tabbar-item>
-      <tabbar-item badge="4" style="margin-top:.05rem;" link="/order" @click.native="tabChange('order')" :class="{active:tab == 'order'}">
+      <tabbar-item badge="" style="margin-top:.05rem;" link="/order" @click.native="tabChange('order')" :class="{active:tab == 'order'}">
         <img slot="icon" src="../../assets/image/icon/order.png">
         <span slot="label" style="font-size: .13rem;" :class="{active:tab == 'order'}">订单</span>
       </tabbar-item>
@@ -55,6 +55,7 @@
         },
         methods:{
             tabChange: function(value){
+                //this.$refs.wode
                 this.$store.dispatch("tabBarChange",value)
             }
         }

@@ -25,6 +25,9 @@ const mutations = {
         }
         storage.setItem("cartProduct",product.nowPrice)
         console.log(JSON.stringify(state.cart))
+    },
+    [types.UPDATE_TO_CART](state,paras){
+        
     }
 }
 
