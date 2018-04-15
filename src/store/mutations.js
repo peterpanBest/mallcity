@@ -12,5 +12,8 @@ export default {
     },
     [types.TABBAR_CONDITION](state,value) {
         state.tabCondition = value
+    },
+    [types.BGDIV_CONDITION](state,value) {
+        state.bgdivCondition = value
     }
 }

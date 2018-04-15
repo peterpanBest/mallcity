@@ -14,6 +14,7 @@ Mock.mock('/tm/data', (req, res) => {
                     title: "美国•【诠释唇色】魅可口红",
                     longTitle: "稚优泉口红正品持久保湿不易脱色防水南瓜脏橘色姨妈豆沙色学生款",
                     img:"/static/img/1341680_1000_1000.jpg",
+                    repoNum: 9999,
                     banner:[
                         "/static/img/goods/101/1.webp",
                         "/static/img/goods/101/2.webp",
@@ -31,6 +32,7 @@ Mock.mock('/tm/data', (req, res) => {
                     title: "NH韩国口红",
                     longTitle: "Dior/迪奥全新烈艳蓝金唇膏3.5g口红520/999/080哑光 新年礼物",
                     img:"/static/img/1388308_1000_1000.jpg",
+                    repoNum: 99,
                     banner:[
                         "/static/img/goods/102/1.webp",
                         "/static/img/goods/102/2.webp",
@@ -48,6 +50,7 @@ Mock.mock('/tm/data', (req, res) => {
                     title: "日本欧丽炫彩口红",
                     longTitle: "香港专柜 YSL圣罗兰圆管口红千颂伊色斩男色唇膏12/46/14 送礼盒",
                     img:"/static/img/2678723_1000_1000.jpg",
+                    repoNum: 889,
                     banner:[
                         "/static/img/goods/103/1.webp",
                         "/static/img/goods/103/2.webp",
@@ -64,6 +67,7 @@ Mock.mock('/tm/data', (req, res) => {
                     title: "越南进口水果 超值低价",
                     longTitle: "现货 Givenchy/纪梵希新春限量小羊皮口红高级定制唇膏305 红色管",
                     img:"/static/img/3613386_1_1000_1000.jpg",
+                    repoNum: 3,
                     banner:[
                         "/static/img/goods/104/1.webp",
                         "/static/img/goods/104/2.webp",

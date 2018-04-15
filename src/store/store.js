@@ -3,9 +3,8 @@ import Vuex from 'vuex'
 import actions from './actions'
 import getters from './getters'
 import mutations from "./mutations"
-// import * as types from "./mutation-types"
 
-// import tmList from "./modules/tmList"
+import cart from "./modules/cart"
 
 Vue.use(Vuex)
 
@@ -13,7 +12,8 @@ const state = {
     tmGoodsList: "",
     detailId: "",
     tabBarCon: "",
-    tabCondition: false
+    tabCondition: false,
+    bgdivCondition: false
 }
 
 
@@ -27,6 +27,6 @@ export default new Vuex.Store({
   actions,
   getters,
   modules: {
-    
+    cart
   }
 })
